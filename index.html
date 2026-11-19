@@ -11,12 +11,17 @@
 <style>
   /* Layout idea: left-aligned editorial column, wide gutters, photos in a loose three-column grid with the middle column dropped slightly. */
   :root {
-    --bg: #E6E1D9;       /* muted stone, lets the photos carry the page */
-    --ink: #2B2724;      /* warm near-black */
-    --muted: #5E5850;    /* secondary text */
-    --line: #CBC4B8;     /* hairlines */
-    --accent: #34402F;   /* deep moss, used for the button and link underline only */
-    --on-accent: #F3EFE8;
+    --bg: #FFD84D;       /* sunshine yellow */
+    --ink: #1B1340;      /* deep indigo */
+    --muted: #4A3B7A;    /* secondary text */
+    --line: #1B1340;     /* hairlines */
+    --accent: #E4005A;   /* hot magenta, button and focus ring */
+    --on-accent: #FFFFFF;
+    --coral: #FF6B6B;
+    --violet: #2B1A7A;
+    --cream: #FFF4D6;
+    --lilac: #E4DAFF;
+    --pink: #FF5FA2;
 
     --font-display: "Gloock", "Iowan Old Style", Georgia, serif;
     --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -73,7 +78,7 @@
     border-radius: 999px;
     transition: transform .2s ease, background-color .2s ease;
   }
-  .button:hover { background: #26301F; transform: translateY(-2px); }
+  .button:hover { background: #B80048; transform: translateY(-2px); }
 
   /* Portfolio */
   .work { padding-bottom: var(--section); }
@@ -101,10 +106,10 @@
     content: "";
     position: absolute;
     inset: 0.9rem;
-    border: 1px solid rgba(43, 39, 36, 0.14);
+    border: 1px solid rgba(27, 19, 64, 0.22);
     pointer-events: none;
   }
-  .frame span { position: relative; z-index: 1; font-size: 0.8125rem; letter-spacing: 0.04em; color: rgba(43, 39, 36, 0.62); }
+  .frame span { position: relative; z-index: 1; font-size: 0.8125rem; letter-spacing: 0.04em; color: rgba(27, 19, 64, 0.7); }
   .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
   .shot figcaption {
     display: flex;
@@ -120,15 +125,15 @@
   }
 
   /* About */
-  .about { padding-block: var(--section); border-top: 1px solid var(--line); }
+  .about { padding-block: var(--section); background: var(--coral); }
   .about .wrap { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(2rem, 7vw, 6rem); align-items: start; }
   .about h2 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
   .about .copy { display: grid; gap: 1.35rem; max-width: 60ch; }
 
   /* Contact */
-  .contact { padding-block: var(--section) clamp(4rem, 8vw, 6rem); border-top: 1px solid var(--line); }
+  .contact { padding-block: var(--section) clamp(4rem, 8vw, 6rem); background: var(--violet); color: var(--cream); }
   .contact h2 { font-size: clamp(2.25rem, 5.5vw, 4rem); max-width: 16ch; }
-  .contact .ask { margin-top: 1.5rem; max-width: 46ch; color: var(--muted); }
+  .contact .ask { margin-top: 1.5rem; max-width: 46ch; color: var(--lilac); }
   .email {
     display: inline-block;
     margin-top: clamp(1.75rem, 4vw, 2.5rem);
@@ -137,12 +142,13 @@
     line-height: 1.15;
     overflow-wrap: anywhere;
     text-decoration: underline;
-    text-decoration-color: var(--accent);
+    color: #FFD84D;
+    text-decoration-color: var(--pink);
     text-decoration-thickness: 2px;
     text-underline-offset: 0.18em;
     transition: text-decoration-color .2s ease;
   }
-  .email:hover { text-decoration-color: var(--ink); }
+  .email:hover { text-decoration-color: var(--cream); }
   .copy-btn {
     display: block;
     margin-top: 1rem;
@@ -150,14 +156,14 @@
     background: none;
     border: 0;
     font: 500 0.9375rem/1.4 var(--font-body);
-    color: var(--muted);
+    color: var(--lilac);
     text-decoration: underline;
     text-underline-offset: 0.2em;
     cursor: pointer;
   }
-  .copy-btn:hover { color: var(--ink); }
+  .copy-btn:hover { color: var(--cream); }
 
-  footer { padding-block: 2rem 3rem; font-size: 0.875rem; color: var(--muted); }
+  footer { padding-block: 2rem 3rem; font-size: 0.875rem; background: var(--violet); color: #CFC3F5; }
 
   @media (max-width: 820px) {
     .grid { grid-template-columns: repeat(2, 1fr); }
@@ -179,7 +185,7 @@
 
 <header class="hero">
   <div class="wrap">
-    <h1>Alice Huang</h1>
+    <h1>Lori Huang</h1>
     <p class="line">Wedding and portrait photography for people who would rather be themselves than pose.</p>
     <a class="button" href="#contact" id="to-contact">Get in touch</a>
   </div>
@@ -196,27 +202,27 @@
       -->
       <ul class="grid">
         <li><figure class="shot">
-          <div class="frame" style="--tone:#D5C5B5"><img src="images/lakeside-ceremony.jpg" alt="A bride and groom embrace on a white platform by the water, hiding their faces behind a bouquet of white flowers" style="object-position:50% 35%" width="408" height="612"></div>
+          <div class="frame" style="--tone:#FFB3C7"><img src="images/lakeside-ceremony.jpg" alt="A bride and groom embrace on a white platform by the water, hiding their faces behind a bouquet of white flowers" style="object-position:50% 35%" width="408" height="612"></div>
           <figcaption>Lakeside ceremony <em>Wedding</em></figcaption>
         </figure></li>
         <li><figure class="shot">
-          <div class="frame" style="--tone:#B9C1B1"><span>Photo</span></div>
+          <div class="frame" style="--tone:#5EE0C4"><span>Photo</span></div>
           <figcaption>Morning window light <em>Portrait</em></figcaption>
         </figure></li>
         <li><figure class="shot">
-          <div class="frame" style="--tone:#C9BCAA"><span>Photo</span></div>
+          <div class="frame" style="--tone:#FF9F5A"><span>Photo</span></div>
           <figcaption>First dance <em>Wedding</em></figcaption>
         </figure></li>
         <li><figure class="shot">
-          <div class="frame" style="--tone:#AFB6BA"><span>Photo</span></div>
+          <div class="frame" style="--tone:#8FA8FF"><span>Photo</span></div>
           <figcaption>Family on the porch <em>Portrait</em></figcaption>
         </figure></li>
         <li><figure class="shot">
-          <div class="frame" style="--tone:#D8C8BF"><span>Photo</span></div>
+          <div class="frame" style="--tone:#FF8FB1"><span>Photo</span></div>
           <figcaption>Before the aisle <em>Wedding</em></figcaption>
         </figure></li>
         <li><figure class="shot">
-          <div class="frame" style="--tone:#C3C0A8"><span>Photo</span></div>
+          <div class="frame" style="--tone:#C9A0FF"><span>Photo</span></div>
           <figcaption>Golden hour walk <em>Portrait</em></figcaption>
         </figure></li>
       </ul>
